@@ -1,1 +1,43 @@
 A social network for keeping track of stock prices.
+
+Steps taken:
+
+create a rails
+create git repository
+
+gemfile:
+prep for heroku deployment
+move   gem 'sqlite3'  into development, :test
+create production and add gems
+group :production
+  gem 'pg'
+  gem 'rails_12factor'
+end
+bundle install --without production
+
+heroku:
+push to github
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku apps: rename new_app_name
+heroku open
+
+devise:
+gem 'devise'
+bundle install --without production
+rails g devise:install
+rails g devise User
+rake db:migrate
+
+bootstarp
+gem 'twitter-bootstrap-rails'
+bundle install --without production
+rails g bootstrap:install static
+rails g bootstrap:layout application
+Y
+(optional) gem 'devise-bootstrap-views'
+add
+*= require devise_bootstrap_views to application.css file above *= require_tree
+rails g devise:views:locale en
+rails g devise:views:bootstrap_templates
