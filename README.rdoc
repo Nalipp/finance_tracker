@@ -36,7 +36,9 @@ bundle install --without production
 rails g bootstrap:install static
 rails g bootstrap:layout application
 Y
-(optional) gem 'devise-bootstrap-views'
+
+additional bootstrap devise forms styling
+gem 'devise-bootstrap-views'
 add
 *= require devise_bootstrap_views to application.css file above *= require_tree
 rails g devise:views:locale en
